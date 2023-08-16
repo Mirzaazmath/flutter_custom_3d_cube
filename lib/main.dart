@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_3d_cube/tem.dart';
 void main(){
   runApp(MyApp());
 }
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeScreen(),
+      home: BoxScreen(),
     );
   }
 }
@@ -56,10 +57,8 @@ class Cube extends StatelessWidget {
           child: Container(
             height: 200,
             width: 200,
-            decoration:const  BoxDecoration(
-                color: Colors.red
-            ),
-            child:const  CircleAvatar(backgroundColor: Colors.white,),
+           color:Colors.red,
+
           ),
         ),
         // Right Side
@@ -73,7 +72,7 @@ class Cube extends StatelessWidget {
                 color: Colors.red
             ),
             alignment: Alignment.center,
-            child:const  CircleAvatar(backgroundColor: Colors.white,),
+
           ),
         ),
 
