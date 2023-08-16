@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_3d_cube/tem.dart';
 void main(){
   runApp(MyApp());
 }
@@ -11,7 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: BoxScreen(),
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
     );
   }
 }
@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       },
       child: Scaffold(
-        appBar: AppBar(),
+backgroundColor: Colors.black,
         body: Transform(
           transform: Matrix4.identity()..setEntry(3, 2,0.001)..rotateX(_offset.dy*pi/180)..rotateY(_offset.dx *pi/180),
           alignment: Alignment.center,
@@ -54,10 +54,16 @@ class Cube extends StatelessWidget {
       children: [
         Transform(
           transform: Matrix4.identity()..translate(0.0,0.0,-100.0),
-          child: Container(
-            height: 200,
-            width: 200,
-           color:Colors.red,
+          child:  Container(
+              height: 200,
+              width: 200,
+
+              decoration:const  BoxDecoration(
+
+
+                color: Colors.red,
+
+              ),
 
           ),
         ),
@@ -65,13 +71,15 @@ class Cube extends StatelessWidget {
         Transform(
           transform: Matrix4.identity()..translate(100.0,0.0,0.0)..rotateY(-pi/2),
           alignment: Alignment.center,
-          child: Container(
+          child:Container(
             height: 200,
             width: 200,
+
             decoration:const  BoxDecoration(
-                color: Colors.red
+
+              color: Colors.red,
+
             ),
-            alignment: Alignment.center,
 
           ),
         ),
@@ -80,12 +88,16 @@ class Cube extends StatelessWidget {
         Transform(
           transform: Matrix4.identity()..translate(0.0,100.0,0.0)..rotateX(pi/2),
           alignment: Alignment.center,
-          child: Container(
+          child:Container(
             height: 200,
             width: 200,
+
             decoration:const  BoxDecoration(
-                color: Colors.red
+
+              color: Colors.red,
+
             ),
+
           ),
         ),
         // left side
@@ -98,8 +110,10 @@ class Cube extends StatelessWidget {
 
             decoration:const  BoxDecoration(
 
-                color: Colors.red
+              color: Colors.red,
+
             ),
+
           ),
         ),
 
@@ -110,9 +124,13 @@ class Cube extends StatelessWidget {
           child: Container(
             height: 200,
             width: 200,
+
             decoration:const  BoxDecoration(
-                color: Colors.red
+
+              color: Colors.red,
+
             ),
+
           ),
         ),
         // top side
@@ -124,9 +142,13 @@ class Cube extends StatelessWidget {
           child: Container(
             height: 200,
             width: 200,
+
             decoration:const  BoxDecoration(
-                color: Colors.red
+
+              color: Colors.red,
+
             ),
+
           ),
         ),
       ],
